@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Question
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <form action="/form-handler" method="post" novalidate>
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="question-one-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Question 1 of 6</span>
+            <h1 class="govuk-fieldset__heading">
+              Which services are in the STS portfolio?
+            </h1>
+          </legend>
+          <p id="question-one-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select an answer to continue
+          </p>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="question-one-a" name="question-one" type="radio" value="Plan Tech and School Account">
+              <label class="govuk-label govuk-radios__label" for="question-one">
+                Plan Tech and School Account
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="question-one-b" name="question-one" type="radio" value="Education Estates and Plan Tech">
+              <label class="govuk-label govuk-radios__label" for="question-one-2">
+                Education Estates and Plan Tech
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="question-one-c" name="question-one" type="radio" value="Plan Tech and Get Help Buying">
+              <label class="govuk-label govuk-radios__label" for="question-one-3">
+                Plan Tech and Get Help Buying
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+</div>
+
+{% endblock %}

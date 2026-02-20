@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} - Start
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <p>Welcome to the Schools Technology Services (STS) Knowledge Check. As a new starter on our team, this knowledge check is designed to help you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>identify gaps in your knowledge of the team</li>
+        <li>find the information you need to fill those knowledge gaps</li>
+      </ul>
+
+      <p>You will answer questions based on your role in the team and receive a score and recommendations based on your answers.</p>
+
+      <h2 class="govuk-heading-m" id="before-you-start">
+        Before you start
+      </h2>
+      <p>Enter your name and select your role type below so that we can tailor your questions to you.</p>
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          Please enter your name
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        <p></p>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            What is your discipline?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="discipline" name="discipline" type="radio" value="Technical">
+              <label class="govuk-label govuk-radios__label" for="discipline">
+                Technical
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="discipline-2" name="discipline" type="radio" value="User centred design (UCD)">
+              <label class="govuk-label govuk-radios__label" for="discipline-2">
+                User centred design (UCD)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="discipline-3" name="discipline" type="radio" value="Product and delivery">
+              <label class="govuk-label govuk-radios__label" for="discipline-3">
+                Product and delivery
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/question-one",
+        isStartButton: true
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Helpful links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                STS Wiki pages
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                DfE Intranet
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                STS on GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
